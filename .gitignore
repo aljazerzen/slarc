@@ -1,0 +1,12 @@
+node_modules/
+platforms/
+hooks/
+lib/
+
+.DS_STORE
+
+*.js.map
+
+app/**/*.js
+
+.vscode/
