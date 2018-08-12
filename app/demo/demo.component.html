@@ -1,0 +1,15 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Home"></Label>
+</ActionBar>
+
+<StackLayout class="page">
+    <Label [text]="group" textWrap="true"></Label>
+    <Button (tap)="createGroup()" text="create group"></Button>
+    <DockLayout orientation="horizontal">
+        <Button dock="right" (tap)="joinGroup()" text="join"></Button>
+        <TextField dock="left" (textChange)="joinGroupId = $event.object.text" hint="group id"></TextField>
+    </DockLayout>
+    <StackLayout *ngIf="ownProfile" style="margin-top: 1em">
+        <Button *ngFor="let group of ownProfile.groupIds" (tap)="selectGroup(group)" [text]="group"></Button>
+    </StackLayout>
+</StackLayout>
