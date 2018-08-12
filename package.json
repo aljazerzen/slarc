@@ -22,6 +22,7 @@
     "nativescript-angular": "~6.0.6",
     "nativescript-plugin-firebase": "^6.4.1",
     "nativescript-theme-core": "~1.0.4",
+    "nativescript-ui-listview": "^3.6.0",
     "reflect-metadata": "~0.1.10",
     "rxjs": "~6.1.0",
     "tns-core-modules": "4.1.1",

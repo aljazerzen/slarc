@@ -1,0 +1,30 @@
+<GridLayout columns="*, *, *,*" rows="50, *, 50">
+	<Label text="ATP 2018" row="0" col="0" colSpan="4"></Label>
+
+	<ListView row="1" col="0" colSpan="4" class="list-group" [items]="people" (itemTap)="onItemTap($event)">
+		<ng-template let-person="item">
+			<FlexboxLayout flexDirection="column" class="list-group-item">
+				<Label [text]="person.name" class="list-group-item-heading"></Label>
+				<ScrollView orientation="horizontal">
+					<StackLayout orientation="horizontal">
+						<FlexboxLayout flexDirection="column" class="list-group-item" *ngFor="let share of person.share">
+							<Image [src]="share.shareType" class="thumb img-circle"></Image>
+							<Label [text]="share.amount" class="list-group-item-heading"></Label>
+						</FlexboxLayout>
+					</StackLayout>
+				</ScrollView>
+			</FlexboxLayout>
+		</ng-template>
+	</ListView>
+
+	<StackLayout row="2" col="0" colSpan="4" orientation="horizontal">
+		<TextField *ngIf="(addButtonSelected==null) ? false : true" type="number" [(ngModel)]="textFieldValue" hint="Enter Amount..." style="background: #ccc; width: 80%">></TextField>
+		<Button class="add-button" *ngIf="isButtonShow(0)" text="" row="2" col="0" (tap)="onAddTap(0)" style="width: 20%"></Button>
+		<Button class="add-button"*ngIf="isButtonShow(1)" text="" row="2" col="1" (tap)="onAddTap(1)" style="width: 20%"></Button>
+		<Button class="add-button"*ngIf="isButtonShow(2)" text="" row="2" col="2" (tap)="onAddTap(2)" style="width: 20%"></Button>
+		<Button class="add-button"*ngIf="isButtonShow(3)" text="" row="2" col="3" (tap)="onAddTap(3)" style="width: 20%"></Button>
+		<Button class="add-button"*ngIf="isButtonShow(4)" text="" row="2" col="4" (tap)="onAddTap(4)" style="width: 20%"></Button>
+	</StackLayout>
+
+
+</GridLayout>
